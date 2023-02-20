@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food-Delivery</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        color: black;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        position: sticky;
+        top: 0;
+      }
+      nav::before {
+        content: "";
+        background-color: black;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: -1;
+        opacity: 0.38;
+      }
+
+      nav .logo {
+        margin: 10px 34px;
+        border: 1px solid red;
+        border-radius: 262px;
+      }
+      .logo img {
+        margin: 3px 6px;
+      }
+      nav li {
+        list-style: none;
+        font-size: 1.3rem;
+      }
+      nav li a {
+        /* color: white; */
+        display: block;
+        padding: 3px 22px;
+        color: white;
+        border-radius: 20px;
+      }
+      nav li a:hover {
+        color: white;
+        background-color: black;
+      }
+
+      #home_page_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 3px 200px;
+        height: 550px;
+        justify-content: center;
+      }
+      #home_page_content::before {
+        content: "";
+        position: absolute;
+        background: url(.//bg1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        top: 0px;
+        height: 642px;
+        left: 0px;
+        width: 100%;
+        opacity: 0.89;
+        z-index: -1;
+      }
+      #home_page_content h1 {
+        color: white;
+        font-size: 3rem;
+        font-family: monospace Arial, Helvetica, sans-serif;
+      }
+      #home_page_content p {
+        color: white;
+        font-size: 1.5rem;
+      }
+      #home_page_content button {
+        background-color: tomato;
+        padding: 3px 15px 3px 15px;
+        font-size: 1.1rem;
+        border-radius: 10px;
+        color: white;
+        position: relative;
+        top: 15px;
+        border: 2px solid black;
+        cursor: pointer;
+      }
+      #home_page_content button:hover {
+        background-color: black;
+        color: white;
+        border: 2px solid red;
+      }
+      #services {
+        margin: 33px;
+      }
+
+      #services h2 {
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      /* #services p{
+            justify-items: center;
+        } */
+      .boxes {
+        display: flex;
+        text-align: justify;
+      }
+      .food {
+        border: 2px solid brown;
+        padding: 30px;
+        margin: 2px 15px;
+        border-radius: 28px;
+        background-color: #f2f2f2;
+        margin-bottom: 20px;
+        /* transition-property: all;
+            transition-timing-function: ease-in;
+            transition-duration: 2s; */
+      }
+      /* .food:hover{
+            box-shadow: 10px 10px 5px 7px red;
+        } */
+
+      .food:hover {
+        /* transform: translate(20px, 0px); */
+      }
+
+      .food h4 {
+        text-align: center;
+        padding: 10px;
+      }
+      .food img {
+        height: 160px;
+        margin: auto;
+        display: block;
+      }
+      #clients h2 {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      .clients-logo {
+        display: flex;
+        /* justify-content: center; */
+        justify-content: space-around;
+      }
+
+      .clients-logo img {
+        height: 125px;
+        margin: 20px;
+      }
+      #clients::before {
+        content: " ";
+        background: url(.//bg.jpg);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.3;
+      }
+
+      #contact {
+        position: relative;
+      }
+      #contact h1 {
+        text-align: center;
+      }
+      form {
+      }
+      #contact::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        opacity: 0.7;
+        background: url(contact.jpg) no-repeat center center/cover;
+      }
+      .contact-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 34px;
+      }
+      .contact-box input,
+      .contact-box textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 9px;
+        font-size: 1.1rem;
+      }
+      .contact-box form {
+        width: 40%;
+      }
+
+      .contact-box label {
+        font-size: 1.3rem;
+      }
+      .contact-box input[type="submit"] {
+        background-color: coral;
+        border-style: none;
+        padding: 10px;
+        font-size: 1.5rem;
+        border-radius: 10px;
+        margin: 15px auto;
+        color: white;
+        background-color: brown;
+      }
+      footer {
+        padding: 20px;
+        background: black;
+        text-align: center;
+        color: white;
+        font-size: 1.3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header id="home">
+        <nav>
+          <div class="logo">
+            <img src="./logo.png" alt="retry" width="50px" height="50px" />
+          </div>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#clients">Our Clients</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </nav>
+        <section id="home_page_content">
+          <h1>Welcome to MyPizzaHunt</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim Lorem
+            ipsum dolor sit amet.
+          </p>
+          <p>
+            dolorum delectus provident corrupti totam quis ipsum earum deserunt.
+          </p>
+          <button type="submit">Order Now</button>
+        </section>
+      </header>
+
+      <main>
+        <section id="services">
+          <h2>Our Services</h2>
+          <div class="boxes">
+            <div class="food-ordering food">
+              <img src=".//img/1.png" alt="" width="200px" height="300px" />
+              <h4>Food Ordering</h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Possimus commodi eveniet numquam enim atque, repellat maxime
+                quisquam ab dignissimos tenetur culpa nam, doloribus sit magni
+                quaerat, dolorem debitis? Eos, tempora?
+              </p>
+            </div>
+            <div class="catering food">
+              <img src=".//img/2.png" alt="" width="200px" height="300px" />
+              <h4>Catering</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+                non vitae, quam inventore, nisi modi praesentium, obcaecati
+                ratione totam omnis ab. Aut voluptatibus atque voluptates autem
+                earum eum molestiae culpa!
+              </p>
+            </div>
+            <div class="bulk-ordering food">
+              <img src=".//img/3.png" alt="" width="200px" height="300px" />
+              <h4>Bulk-Ordering</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+                non vitae, quam inventore, nisi modi praesentium, obcaecati
+                ratione totam omnis ab. Aut voluptatibus atque voluptates autem
+                earum eum molestiae culpa!
+              </p>
+            </div>
+          </div>
+        </section>
+        <section id="clients">
+          <h2>Our Clients</h2>
+          <div class="clients-logo">
+            <img src=".//img/logo1.png" alt="" width="200px" height="300px" />
+            <img src=".//img/logo2.png" alt="" width="200px" height="300px" />
+            <img src=".//img/logo3.png" alt="" width="200px" height="300px" />
+            <img src=".//img/logo4.png" alt="" width="200px" height="300px" />
+          </div>
+        </section>
+        <section id="contact">
+          <h1>Contact Us</h1>
+          <div class="contact-box">
+            <form action="#">
+              <div class="from-group">
+                <label for="name">Name:</label>
+                <input
+                  type="text"
+                  name="name"
+                  id=""
+                  placeholder="Enter Name"
+                  required
+                />
+              </div>
+              <div class="from-group">
+                <label for="e-mail">E-Mail:</label>
+                <input
+                  type="email"
+                  name="email"
+                  id=""
+                  placeholder="Enter E-Mail"
+                  required
+                />
+              </div>
+              <div class="from-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input
+                  type="text"
+                  name="name"
+                  id=""
+                  placeholder="Enter Phone Number"
+                  required
+                />
+              </div>
+              <div class="from-group">
+                <label for="text">Message:</label>
+                <textarea
+                  name=""
+                  id=""
+                  cols="20"
+                  rows="2"
+                  placeholder="Enter Message"
+                ></textarea>
+              </div>
+              <div class="from-group">
+                <input type="submit" value="Send" />
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+      <footer>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, quo.
+      </footer>
+    </div>
+  </body>
+</html>
